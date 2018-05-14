@@ -1,0 +1,99 @@
+
+.nav-left {
+    width: 100px;
+    height: 100%;
+    padding-bottom: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #2a3142;
+    text-align: center;
+}
+.main-right {
+    margin: 0 15px 0 115px;
+}
+
+.nav-left {
+    padding-top: 50px;
+}
+.nav-left h3 {
+    color: white;
+    font-size: 18px;
+}
+.nav-left ul a {
+    font-size: 16px;
+    color: white;
+    padding: 5px 0;
+    display: inline-block;
+    width: 100px;
+    text-decoration: none;
+}
+.nav-left ul a:hover{
+    background-color: #3f61b1;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 888;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #2a3142;
+    color: white
+}
+.header ul  {
+    margin-right: 40px;
+}
+.header ul li {
+    float: right;
+    cursor: pointer;
+    position: relative;
+}
+.header ul .logo {
+    float: left;
+}
+.logo {
+    color: #ffffff !important;
+    font-size: 18px;
+    text-decoration: none;
+}
+.header ul li  .bgColor {
+    display: block;
+    padding: 0 15px;
+}
+.header ul li .bgColor:hover {
+    background-color: #3f61b1;
+}
+.header ul li:hover a {
+    text-decoration: none;
+}
+.header .active-menu {
+    background-color: #3f61b1;
+}
+.content {
+    margin-top: 70px;
+    background-color: wheat;
+    padding-bottom: 100%;
+}
+
+
+
+.header .menu-list {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    min-width: 180px;
+    background-color: #2a3142;
+    overflow: auto;
+    margin-right: 0;
+    text-align: center;
+}
+.header .menu-list li {
+    display: block;
+    float: none;
+}
+.header .menu-list li:hover {
+    background-color: #3f61b1;
+}

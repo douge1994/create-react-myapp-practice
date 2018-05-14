@@ -1,0 +1,7 @@
+require('../lib/assets/css/bootstrap.min.css')
+require('../lib/assets/css/core.css')
+require('../lib/assets/css/icons.css')
+require('../lib/assets/css/components.css')
+require('../lib/assets/css/pages.css')
+require('../lib/assets/css/menu.css')
+require('./initalcss2.css')
