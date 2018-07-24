@@ -37,6 +37,11 @@ const ReduxExample2 = (props) => (
       {(ReduxExample2) => <ReduxExample2 {...props}/>}
   </Bundle>
 );
+const ReactTable = (props) => (
+    <Bundle load={() => import('./ReactTable')}>
+        {(ReactTable) => <ReactTable {...props}/>}
+    </Bundle>
+  );
 /**
  * 
  * @param --end-- 此处为按需加载各个组件<test中含有一个echart的引入。>
@@ -72,6 +77,9 @@ class Home extends Component {
       this.props.handleClickExample2()//此次调用是因为connect后,将更改value的事件放置在了store中
     }
     signOut(){//退出登录
+        if(localStorage.getItem('isAuthorized')){
+            localStorage.clear('isAuthorized')
+        }
         this.props.signOut();
     }
 
@@ -140,6 +148,8 @@ class Home extends Component {
 
                                       <h4>example--------------2</h4>
                                       <ReduxExample2 value={this.props.value} onClick={this.handleClickExample2.bind(this)}/> 
+                                      <h5>react  table-------</h5>
+                                      <ReactTable/>
                                   </div>
                                   
                               )}/>

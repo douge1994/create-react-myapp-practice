@@ -14,6 +14,11 @@ import Home from './components/Home';
 import { connect } from 'react-redux'
 import { authorized } from './actions/action'
 
+import axios from 'axios'
+import loginService from './services/login-service'
+import { myGet } from './services/http-set'
+
+import 'antd/dist/antd.css'
 
 
 const history = createBrowserHistory();
@@ -25,15 +30,21 @@ class App extends Component {
             isAuthorized:false
         }
     }
-   
+
     handleSubmit(location,formValue){
         const that=this;
         // console.log(formValue);//表单数据
         // console.log(location);//router 的location 属性
-        $.get('./project8.json',function(res){
+        loginService.test().then(function(res){
+            if(res.data[0].success == true){
+                localStorage.setItem('isAuthorized',res.data[0].isAuthorized)
                 
+                that.props.handleSubmit();
+            }
+        },(err)=>{
+             console.log(err.response)
         })
-        this.props.handleSubmit();
+         
     }
     
     render() {

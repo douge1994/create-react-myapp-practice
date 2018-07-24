@@ -1,13 +1,27 @@
 const authorize=(state,action)=>{
-    if(!state){
-        state={ isAuthorized: false}
-    }
-    const isAuthorized = state.isAuthorized
+    // if(!state){
+    //     state={ isAuthorized: false}
+    // }
+    if(!state) { 
+        console.log('state'); 
+        if(localStorage.getItem('isAuthorized')) { 
+            return state = { 
+                isAuthorized: true, 
+                usermsg: 'test'
+            } 
+        } 
+        return state={ 
+            isAuthorized: false, 
+            usermsg: {} 
+        } 
+    } 
+    // const isAuthorized = state.isAuthorized
+    var status='';
     switch(action.type){
         case 'authorize' :
-            return { isAuthorized:true }
+            return { isAuthorized:true,usermsg: 'test' }
         case 'clearAuthorize' :
-            return { isAuthorized:false }
+            return { isAuthorized:false,usermsg: 'test' }
         default:
             return state;
     }
